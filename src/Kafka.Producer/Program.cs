@@ -6,7 +6,9 @@ namespace Kafka.Producer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
+
+
     }
 }
