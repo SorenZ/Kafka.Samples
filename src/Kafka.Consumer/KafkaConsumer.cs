@@ -65,12 +65,11 @@ namespace Kafka.Consumer
                     {
                         continue;
                     }
-                    _logger.LogInformation($" received message on topic <{kafkaMessage.Topic}>", kafkaMessage.Value);
+                    //_logger.LogInformation($" received message on topic <{kafkaMessage.Topic}>", kafkaMessage.Value);
                     // 1: The received message is deserialized to an IntegrationEvent which contains the meta-data for handling the event.
                     message = JsonConvert.DeserializeObject<string>(kafkaMessage.Value);
 
-                    _logger.LogInformation(
-                        $"{nameof(KafkaConsumer)}: received message on topic <{kafkaMessage.Topic}>", message);
+                    _logger.LogInformation($"{nameof(KafkaConsumer)}: received <{message}> on topic <{kafkaMessage.Topic}>");
 
                     // 5: The message is committed, if no exception occurred during handling of the message
                     await consumer.CommitAsync(kafkaMessage);
