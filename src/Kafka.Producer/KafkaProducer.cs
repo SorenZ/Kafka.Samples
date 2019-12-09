@@ -6,7 +6,7 @@ using Confluent.Kafka;
 
 namespace Kafka.Producer
 {
-    public class KafkaProducer : IProducer
+    public class KafkaProducer 
     {
 
         private readonly IProducer<Null,string> _producer;
