@@ -4,6 +4,6 @@ namespace Kafka.Producer
 {
     public interface IProducer
     {
-        Task Send(object @event, string topic);
+        Task Send(string message, string topic);
     }
 }
