@@ -8,7 +8,6 @@ using Confluent.Kafka;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace Kafka.Consumer
 {
@@ -69,16 +68,6 @@ namespace Kafka.Consumer
 
             return Task.CompletedTask;
         }
-
-        //private void OnError(object sender, Error e)
-        //{
-        //    _logger.LogError($" error consuming message <{e.Reason}> with reason <{e.Reason}", e);
-        //}
-
-        //private void OnConsumeError(object sender, Message e)
-        //{
-        //    _logger.LogError($" error on-consume consuming message on topic <{e.Topic}> with reason <{e.Error}", e.Value);
-        //}
 
         private async Task Consume(IConsumer<Ignore, string> consumer, CancellationToken cancellationToken)
         {

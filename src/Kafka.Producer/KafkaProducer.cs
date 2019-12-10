@@ -13,22 +13,10 @@ namespace Kafka.Producer
 
         public KafkaProducer()
         {
-            //var config = new Dictionary<string, object>
-            //{
-            //    {"bootstrap.servers", "10.104.51.12:9092,10.104.51.13:9092,10.104.51.14:9092"},
-
-            //    {"message.send.max.retries", 3},
-            //    {
-            //        "default.topic.config", new Dictionary<string, object>
-            //        {
-            //            {"message.timeout.ms", "00:00:15"}
-            //        }
-            //    }
-            //};
-
             var config = new ProducerConfig { BootstrapServers =  "10.104.51.12:9092,10.104.51.13:9092,10.104.51.14:9092"};
-            //_producer = new Producer<Null, string>(config, null, new StringSerializer(Encoding.UTF8));
+            
             _producer = new ProducerBuilder<Null,string>(config).Build();
+            
             Console.WriteLine("\n-----------------------------------------------------------------------");
             Console.WriteLine("Ctrl-C to quit.\n");
         }
